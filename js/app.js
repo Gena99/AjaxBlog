@@ -2,8 +2,13 @@
 	"use strict";
 	var app = {
 		init:function(){
-			// let's go
-		},
+			var converter = new showdown.Converter();
+			$.get("example.md", function(data){
+				//console.log(data);
+				var texteMarkDownConvertiEnHTML = converter.makeHtml(data);
+    			$('#md').html(texteMarkDownConvertiEnHTML);
+			});
+		}
 	};
 
 
